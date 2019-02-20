@@ -3,18 +3,19 @@ using System.Collections;
 
 public class Car2dController : MonoBehaviour
 {
-    float speedForce = 10f;
+    float speedForce = 30f;
     float torqueForce = -200f;
     float driftFactorSticky = 0.9f;
-    float driftFactorSlippy = 1f;
+    float driftFactorSlippy = 1;
     float maxStickyVelocity = 2.5f;
    
     // Use this for initialization
     void Start()
     {
+		
     }
-        void Update(){
-        }
+    void Update(){
+	}
 
     
 
@@ -24,29 +25,30 @@ public class Car2dController : MonoBehaviour
        
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
-        Debug.Log(RightVelocity().magnitude);
+        //Debug.Log(RightVelocity().magnitude);
 
         float driftFactor = driftFactorSticky;
-        if(RightVelocity().magnitude> maxStickyVelocity){
+        if(RightVelocity().magnitude > maxStickyVelocity){
             driftFactor = driftFactorSlippy;
         }
 
 
 
-        rb.velocity = ForwardVelocity()+ RightVelocity()*driftFactor;
+        rb.velocity = ForwardVelocity() + RightVelocity()*driftFactor;
 
         if (Input.GetButton("Accelerate")){
-        rb.AddForce(transform.up* speedForce);
+        	rb.AddForce(transform.up * speedForce);
 
         }
+
         if(Input.GetButton("Brakes")){
             rb.AddForce(transform.up * -speedForce / 2f);
         }
 
 
-        float tf = Mathf.Lerp(0,torqueForce, rb.velocity.magnitude/2);
+        float tf = Mathf.Lerp(0, torqueForce, rb.velocity.magnitude/2);
 
-        rb.angularVelocity=Input.GetAxis("Horizontal") * tf;
+        rb.angularVelocity = Input.GetAxis("Horizontal") * tf;
     }
 
     Vector2 ForwardVelocity(){
@@ -59,4 +61,10 @@ public class Car2dController : MonoBehaviour
         return transform.right * Vector2.Dot(GetComponent<Rigidbody2D>().velocity, transform.right);
 
     }
+
+	public void OnTriggerEnter2D(Collider2D otherCollider){
+		if(otherCollider.CompareTag("Oil")){
+			speedForce = 0f;
+		}
+	}
 }
