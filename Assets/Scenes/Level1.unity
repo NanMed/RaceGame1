@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 90686237}
   - component: {fileID: 90686236}
   m_Layer: 0
-  m_Name: Square
+  m_Name: WallLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 245195588}
   - component: {fileID: 245195587}
   m_Layer: 0
-  m_Name: carroprueba1
+  m_Name: PlayerCar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 486815832}
   - component: {fileID: 486815831}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: WallRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 1932861729}
   - component: {fileID: 1932861728}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 2022481421}
   - component: {fileID: 2022481420}
   m_Layer: 0
-  m_Name: pistaHielo
+  m_Name: IceTrack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -827,7 +827,7 @@ GameObject:
   - component: {fileID: 2039711921}
   - component: {fileID: 2039711920}
   m_Layer: 0
-  m_Name: Square (3)
+  m_Name: Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
