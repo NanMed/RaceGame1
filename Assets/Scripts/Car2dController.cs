@@ -62,9 +62,20 @@ public class Car2dController : MonoBehaviour
 
     }
 
-	public void OnTriggerEnter2D(Collider2D otherCollider){
-		if(otherCollider.CompareTag("Oil")){
-			speedForce = 0f;
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.tag == "Oil")
+		{
+			speedForce = 1f;
+		}
+
+	}
+
+	private void OnTriggerExit2D(Collider2D other)
+	{
+		if (other.gameObject.tag == "Oil")
+		{
+			speedForce = 30f;
 		}
 	}
 }
