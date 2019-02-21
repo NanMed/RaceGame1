@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Car2dController : MonoBehaviour
 {
@@ -8,13 +9,26 @@ public class Car2dController : MonoBehaviour
     float driftFactorSticky = 0.9f;
     float driftFactorSlippy = 1;
     float maxStickyVelocity = 2.5f;
+
+	public float resetDelay = 1f;
+
+	int lap;
+	int lives;
+
+	public Text lapText;
+	public Text livesText;
+	public GameObject gameover;
+	public GameObject win;
+
    
     // Use this for initialization
     void Start()
     {
-		
+		lap = 0;
+		lives = 3;
     }
     void Update(){
+		
 	}
 
     
@@ -69,7 +83,15 @@ public class Car2dController : MonoBehaviour
 		{
 			speedForce = 4f;
 		}
-
+		if(other.gameObject.tag == "FinishLine"){
+			lap +=1;
+			lapText.text = "Laps: " + lap;
+		}
+		if(other.gameObject.tag == "Water"){
+			lives -=1;
+			livesText.text = "Lives: " + lives;
+		}
+		CheckGameOver();
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
@@ -79,4 +101,20 @@ public class Car2dController : MonoBehaviour
 			speedForce = 30f;
 		}
 	}
+
+	void CheckGameOver(){
+		if(lap == 3){
+			win.SetActive(true);
+			Time.timeScale = .25f;
+			Invoke("Reset", resetDelay);
+			Destroy(gameObject);
+		}
+		if(lives < 1){
+			gameover.SetActive(true);
+			Time.timeScale = .25f;
+			Invoke("Reset", resetDelay);
+			Destroy(gameObject);
+		}
+	}
+		
 }
