@@ -67,7 +67,7 @@ public class Car2dController : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Oil")
 		{
-			speedForce = 1f;
+			speedForce = 4f;
 		}
 
 	}
