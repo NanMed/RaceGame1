@@ -40,10 +40,10 @@ public class NewBehaviourScript : MonoBehaviour
 
         Vector2 pos = new Vector2(Random.Range(xMin, xMax), Random.Range(yMin, yMax));
 
-
-        GameObject oil;
+        
+      //  GameObject oil;
 
         // Creates the random object at the random 2D position.
-        Instantiate(oil, new Vector2(Random.Range(xMin, xMax), Random.Range(yMin, yMax)),0);
+        //Instantiate(oil, new Vector2(Random.Range(xMin, xMax), Random.Range(yMin, yMax)),0);
     }
 }
