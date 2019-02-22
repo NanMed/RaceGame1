@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,4 +46,4 @@ public class NewBehaviourScript : MonoBehaviour
         // Creates the random object at the random 2D position.
         //Instantiate(oil, new Vector2(Random.Range(xMin, xMax), Random.Range(yMin, yMax)),0);
     }
-}
+}*/
