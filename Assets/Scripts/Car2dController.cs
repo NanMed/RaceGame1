@@ -107,13 +107,13 @@ public class Car2dController : MonoBehaviour
 			win.SetActive(true);
 			Time.timeScale = .25f;
 			Invoke("Reset", resetDelay);
-			Destroy(gameObject);
+			//Destroy(gameObject);
 		}
 		if(lives < 1){
 			gameover.SetActive(true);
 			Time.timeScale = .25f;
 			Invoke("Reset", resetDelay);
-			Destroy(gameObject);
+			//Destroy(gameObject);
 		}
 	}
 		
