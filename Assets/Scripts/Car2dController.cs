@@ -28,7 +28,7 @@ public class Car2dController : MonoBehaviour
 		lives = 3;
     }
     void Update(){
-		
+		Debug.Log(speedForce);
 	}
 
     
@@ -91,6 +91,12 @@ public class Car2dController : MonoBehaviour
 			lives -=1;
 			livesText.text = "Lives: " + lives;
 		}
+		if(other.gameObject.tag == "Tanque"){
+			//speedForce = Mathf.Floor(Time.time * 2) + 30;
+			//speedForce = 40f;
+			Destroy(GameObject.FindWithTag("Tanque"));
+			RunForTime(2f,()=>speedForce += 7*Time.deltaTime);
+		}
 		CheckGameOver();
 	}
 
@@ -115,6 +121,22 @@ public class Car2dController : MonoBehaviour
 			Invoke("Reset", resetDelay);
 			//Destroy(gameObject);
 		}
+	}
+
+	//https://answers.unity.com/questions/1222208/add-x-amount-in-x-seconds.html
+	IEnumerator _RunForTime(float aDuration, System.Action aCallback)
+	{
+		float t = 0f;
+		while(t < aDuration)
+		{
+			t += Time.deltaTime;
+			aCallback();
+			yield return null;
+		}
+	}
+	public void RunForTime(float aDuration, System.Action aCallback)
+	{
+		StartCoroutine(_RunForTime(aDuration, aCallback));
 	}
 		
 }
