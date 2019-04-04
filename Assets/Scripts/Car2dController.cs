@@ -19,6 +19,7 @@ public class Car2dController : MonoBehaviour
 	public Text livesText;
 	public GameObject gameover;
 	public GameObject win;
+	public AudioSource lineSound;
 
    
     // Use this for initialization
@@ -26,9 +27,10 @@ public class Car2dController : MonoBehaviour
     {
 		lap = 0;
 		lives = 3;
+		lineSound = GetComponent<AudioSource>();
     }
     void Update(){
-		Debug.Log(speedForce);
+		//Debug.Log(speedForce);
 	}
 
     
@@ -86,6 +88,7 @@ public class Car2dController : MonoBehaviour
 		if(other.gameObject.tag == "FinishLine"){
 			lap +=1;
 			lapText.text = "Laps: " + lap;
+			lineSound.Play();
 		}
 		if(other.gameObject.tag == "Water"){
 			lives -=1;
@@ -94,6 +97,7 @@ public class Car2dController : MonoBehaviour
 		if(other.gameObject.tag == "Tanque"){
 			//speedForce = Mathf.Floor(Time.time * 2) + 30;
 			//speedForce = 40f;
+			Debug.Log("Tanque");
 			Destroy(GameObject.FindWithTag("Tanque"));
 			RunForTime(2f,()=>speedForce += 7*Time.deltaTime);
 		}
