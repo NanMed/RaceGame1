@@ -8,6 +8,8 @@ TagManager:
   - FinishLine
   - Water
   - Tanque
+  - Player2
+  - Player1
   layers:
   - Default
   - TransparentFX
