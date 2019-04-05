@@ -90,10 +90,10 @@ public class Car2dController : MonoBehaviour
 			lapText.text = "Laps: " + lap;
 			lineSound.Play();
 		}
-		if(other.gameObject.tag == "Water"){
+		/*if(other.gameObject.tag == "Water"){
 			lives -=1;
 			livesText.text = "Lives: " + lives;
-		}
+		}*/
 		if(other.gameObject.tag == "Tanque"){
 			//speedForce = Mathf.Floor(Time.time * 2) + 30;
 			//speedForce = 40f;
