@@ -19,7 +19,10 @@ public class Car2dController : MonoBehaviour
 	public Text livesText;
 	public GameObject gameover;
 	public GameObject win;
-	public AudioSource lineSound;
+	public GameObject lose;
+	private AudioSource lineSound;
+	public static bool first = false;
+	private bool sec;
 
    
     // Use this for initialization
@@ -28,9 +31,11 @@ public class Car2dController : MonoBehaviour
 		lap = -1;
 		lives = 3;
 		lineSound = GetComponent<AudioSource>();
+
     }
     void Update(){
-		Debug.Log(speedForce);
+		//Debug.Log(speedForce);
+		sec = CarControllerPlayer2.first;
 	}
 
     
@@ -113,10 +118,21 @@ public class Car2dController : MonoBehaviour
 
 	void CheckGameOver(){
 		if(lap == 3){
+			first = true;
+			//win.SetActive(true);
+			//Time.timeScale = .25f;
+			//Invoke("Reset", resetDelay);
+			//Destroy(gameObject);
+		}
+
+		if(first && sec == false){
 			win.SetActive(true);
 			Time.timeScale = .25f;
 			Invoke("Reset", resetDelay);
-			//Destroy(gameObject);
+		} else if (!first && sec == true){
+			lose.SetActive(true);
+			Time.timeScale = .25f;
+			Invoke("Reset", resetDelay);
 		}
 		if(lives < 1){
 			gameover.SetActive(true);
