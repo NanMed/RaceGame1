@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour {
 	void Update () {
 		if(Time.time > nextSpawn){
 			nextSpawn = Time.time + spawnRate;
-			randX = Random.Range(-.4f, .4f);
+			randX = Random.Range(20f, 20f);
 			whereTo = new Vector2 (randX, transform.position.y);
 			Instantiate(spawned, whereTo, Quaternion.identity);
 		}
