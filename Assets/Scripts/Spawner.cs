@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour {
 	float randX;
 	Vector2 whereTo;
 	public float spawnRate = 2f;
-	double nextSpawn = 0.0;
+	float nextSpawn = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -19,11 +19,14 @@ public class Spawner : MonoBehaviour {
 	void Update () {
 		if(Time.time > nextSpawn){
 			nextSpawn = Time.time + spawnRate;
-			randX = Random.Range(20f, 20f);
+			randX = Random.Range(-.4f, .4f);
 			whereTo = new Vector2 (randX, transform.position.y);
 			Instantiate(spawned, whereTo, Quaternion.identity);
+			//GameObject.Destroy(gameObject, 2.0f);
 		}
 
 
 	}
+
+
 }
