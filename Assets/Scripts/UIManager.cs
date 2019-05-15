@@ -10,4 +10,22 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("SelectPlayer");
         Debug.Log("Click");
 	}
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Start");
+        Debug.Log("Start");
+    }
+
+    public void toLevel2()
+    {
+        SceneManager.LoadScene("Level2");
+        Debug.Log("Level2");
+    }
+
+    public void toLevel3()
+    {
+        SceneManager.LoadScene("Level3");
+        Debug.Log("Level3");
+    }
 }

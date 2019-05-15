@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4915703996757322947}
   m_LocalRotation: {x: -0, y: -0, z: -0.13842772, w: 0.99037254}
-  m_LocalPosition: {x: -40.1, y: 19.9, z: -5.4}
+  m_LocalPosition: {x: -40.1, y: 19.9, z: -1}
   m_LocalScale: {x: 0.16986883, y: 0.14650966, z: 1.2271}
   m_Children:
   - {fileID: 4915703997914662198}
@@ -51,9 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cfd6b50792dd4f15bd3fa0b0b14bb49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coins: 0
   resetDelay: 1
   lapText: {fileID: 0}
   livesText: {fileID: 0}
+  coinText: {fileID: 0}
   gameover: {fileID: 0}
   win: {fileID: 0}
   lose: {fileID: 0}
@@ -124,7 +126,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &4915703996757322957
 BoxCollider2D:
@@ -136,7 +138,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.13397074, y: -0.00001001358}

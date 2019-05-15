@@ -10,6 +10,7 @@ TagManager:
   - Tanque
   - Player2
   - Player1
+  - Moneda
   layers:
   - Default
   - TransparentFX

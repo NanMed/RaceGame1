@@ -9,71 +9,89 @@ public class Car2dController : MonoBehaviour
     float driftFactorSticky = 0.9f;
     float driftFactorSlippy = 1;
     float maxStickyVelocity = 2.5f;
+    public int coins = 0;
 
-	public float resetDelay = 1f;
+    public float resetDelay = 1f;
 
-	int lap;
-	int lives;
+    int lap;
+    int lives;
 
-	public Text lapText;
-	public Text livesText;
-	public GameObject gameover;
-	public GameObject win;
-	public GameObject lose;
-	private AudioSource lineSound;
-	public static bool first = false;
-	private bool sec;
+    public Text lapText;
+    public Text livesText;
+    public Text coinText;
+    public GameObject gameover;
+    public GameObject win;
+    public GameObject nextLevel;
+    public GameObject exit;
+    public GameObject lose;
+    private AudioSource lineSound;
+    public static bool first = false;
+    private bool sec;
 
-   
+    private void Awake()
+    {
+        lapText = GetComponent<Text>();
+        livesText = GetComponent<Text>();
+        coinText = GetComponent<Text>();
+        win = GetComponent<GameObject>();
+        nextLevel = GetComponent<GameObject>();
+        exit = GetComponent<GameObject>();
+        lose = GetComponent<GameObject>();
+    }
     // Use this for initialization
     void Start()
     {
-		lap = -1;
-		lives = 3;
-		lineSound = GetComponent<AudioSource>();
+        lap = -1;
+        lives = 3;
+        lineSound = GetComponent<AudioSource>();
 
     }
-    void Update(){
-		//Debug.Log(speedForce);
-		sec = CarControllerPlayer2.first;
-	}
+    void Update()
+    {
+        //Debug.Log(speedForce);
+        sec = CarControllerPlayer2.first;
+    }
 
-    
+
 
     // Update is called once per frame
     void FixedUpdate()
     {
-       
+
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
         //Debug.Log(RightVelocity().magnitude);
 
         float driftFactor = driftFactorSticky;
-        if(RightVelocity().magnitude > maxStickyVelocity){
+        if (RightVelocity().magnitude > maxStickyVelocity)
+        {
             driftFactor = driftFactorSlippy;
         }
 
 
 
 
-        rb.velocity = ForwardVelocity() + RightVelocity()*driftFactor;
+        rb.velocity = ForwardVelocity() + RightVelocity() * driftFactor;
 
-        if (Input.GetButton("Accelerate")){
-        	rb.AddForce(transform.up * speedForce);
+        if (Input.GetButton("Accelerate"))
+        {
+            rb.AddForce(transform.up * speedForce);
 
         }
 
-        if(Input.GetButton("Brakes")){
+        if (Input.GetButton("Brakes"))
+        {
             rb.AddForce(transform.up * -speedForce / 2f);
         }
 
 
-        float tf = Mathf.Lerp(0, torqueForce, rb.velocity.magnitude/2);
+        float tf = Mathf.Lerp(0, torqueForce, rb.velocity.magnitude / 2);
 
         rb.angularVelocity = Input.GetAxis("Horizontal") * tf;
     }
 
-    Vector2 ForwardVelocity(){
+    Vector2 ForwardVelocity()
+    {
         return transform.up * Vector2.Dot(GetComponent<Rigidbody2D>().velocity, transform.up);
 
     }
@@ -84,78 +102,95 @@ public class Car2dController : MonoBehaviour
 
     }
 
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		if (other.gameObject.tag == "Oil")
-		{
-			speedForce = 4f;
-		}
-		if(other.gameObject.tag == "FinishLine"){
-			lap +=1;
-			lapText.text = "Laps: " + lap;
-			lineSound.Play();
-		}
-		/*if(other.gameObject.tag == "Water"){
-			lives -=1;
-			livesText.text = "Lives: " + lives;
-		}*/
-		if(other.gameObject.tag == "Tanque"){
-			//speedForce = Mathf.Floor(Time.time * 2) + 30;
-			//speedForce = 40f;
-			Destroy(GameObject.FindWithTag("Tanque"));
-			RunForTime(2f,()=>speedForce += 7*Time.deltaTime);
-		}
-		CheckGameOver();
-	}
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Oil")
+        {
+            speedForce = 4f;
+            Debug.Log("collide Oil");
+        }
+        if (other.gameObject.tag == "FinishLine")
+        {
+            lap += 1;
+            lapText.text = "Laps: " + lap;
+            lineSound.Play();
+        }
+        
+        if (other.gameObject.tag == "Tanque")
+        {
+            //speedForce = Mathf.Floor(Time.time * 2) + 30;
+            //speedForce = 40f;
+            Destroy(other.gameObject);
+            RunForTime(2f, () => speedForce += 7 * Time.deltaTime);
+            Debug.Log("collide tanque");
+        }
 
-	private void OnTriggerExit2D(Collider2D other)
-	{
-		if (other.gameObject.tag == "Oil")
-		{
-			speedForce = 30f;
-		}
-	}
+        if (other.gameObject.tag == "Moneda")
+        {
+            Destroy(other.gameObject);
+            coins += 1;
+            coinText.text = "Coins: " + coins;
+            Debug.Log("collide moneda");
+        }
 
-	void CheckGameOver(){
-		if(lap == 3){
-			first = true;
-			//win.SetActive(true);
-			//Time.timeScale = .25f;
-			//Invoke("Reset", resetDelay);
-			//Destroy(gameObject);
-		}
+        CheckGameOver();
+    }
 
-		if(first && sec == false){
-			win.SetActive(true);
-			Time.timeScale = .25f;
-			Invoke("Reset", resetDelay);
-		} else if (!first && sec == true){
-			lose.SetActive(true);
-			Time.timeScale = .25f;
-			Invoke("Reset", resetDelay);
-		}
-		if(lives < 1){
-			gameover.SetActive(true);
-			Time.timeScale = .25f;
-			Invoke("Reset", resetDelay);
-			//Destroy(gameObject);
-		}
-	}
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Oil")
+        {
+            speedForce = 30f;
+        }
+    }
 
-	//https://answers.unity.com/questions/1222208/add-x-amount-in-x-seconds.html
-	IEnumerator _RunForTime(float aDuration, System.Action aCallback)
-	{
-		float t = 0f;
-		while(t < aDuration)
-		{
-			t += Time.deltaTime;
-			aCallback();
-			yield return null;
-		}
-	}
-	public void RunForTime(float aDuration, System.Action aCallback)
-	{
-		StartCoroutine(_RunForTime(aDuration, aCallback));
-	}
-		
+    void CheckGameOver()
+    {
+        if (lap == 3)
+        {
+            first = true;
+            //win.SetActive(true);
+            //Time.timeScale = .25f;
+            //Invoke("Reset", resetDelay);
+            //Destroy(gameObject);
+        }
+
+        if (first && !sec)
+        {
+            win.SetActive(true);
+            nextLevel.SetActive(true);
+            exit.SetActive(true);
+            Time.timeScale = .25f;
+            Invoke("Reset", resetDelay);
+        }
+        else if (!first && sec)
+        {
+            lose.SetActive(true);
+            Time.timeScale = .25f;
+            Invoke("Reset", resetDelay);
+        }
+        if (lives < 1)
+        {
+            gameover.SetActive(true);
+            Time.timeScale = .25f;
+            Invoke("Reset", resetDelay);
+            //Destroy(gameObject);
+        }
+    }
+
+    //https://answers.unity.com/questions/1222208/add-x-amount-in-x-seconds.html
+    IEnumerator _RunForTime(float aDuration, System.Action aCallback)
+    {
+        float t = 0f;
+        while (t < aDuration)
+        {
+            t += Time.deltaTime;
+            aCallback();
+            yield return null;
+        }
+    }
+    public void RunForTime(float aDuration, System.Action aCallback)
+    {
+        StartCoroutine(_RunForTime(aDuration, aCallback));
+    }
 }
