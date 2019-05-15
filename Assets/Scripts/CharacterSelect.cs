@@ -8,7 +8,7 @@ public class CharacterSelect : MonoBehaviour
     public void ChooseCharacter(int index)
     {
         PlayerPrefs.SetInt("selectedCharacter", index);
-        //print("The index is " + index);
+        print("The index is " + index);
     }
 
     public void LoadScene()

@@ -11,22 +11,17 @@ public class CharacterSpawner : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("selectedCharacter") == 0)
         {
-            Instantiate(players[(0)], Vector2.zero, Quaternion.identity);
+            Instantiate(players[(0)], new Vector3(-45f, 21f, -5.4f), new Quaternion(0f, 0f, -18.898f, 360));
         }
 
         if (PlayerPrefs.GetInt("selectedCharacter") == 1)
         {
-            Instantiate(players[(1)], Vector2.zero, Quaternion.identity);
+            Instantiate(players[(1)], new Vector3(-45f, 21f, -5.4f), new Quaternion(0f, 0f, -18.898f, 360));
         }
 
         if (PlayerPrefs.GetInt("selectedCharacter") == 2)
         {
-            Instantiate(players[(2)], Vector2.zero, Quaternion.identity);
-        }
-
-        if (PlayerPrefs.GetInt("selectedCharacter") == 3)
-        {
-            Instantiate(players[(3)], Vector2.zero, Quaternion.identity);
+            Instantiate(players[(2)], new Vector3(-45f, 21f, -5.4f), new Quaternion(0f, 0f, -18.898f, 360));
         }
     }
 }

@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
 	public void Play(){
-		Application.LoadLevel("Level1");
-		Debug.Log("Click");
+        SceneManager.LoadScene("SelectPlayer");
+        Debug.Log("Click");
 	}
 }
