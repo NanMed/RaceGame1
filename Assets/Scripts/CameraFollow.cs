@@ -4,20 +4,26 @@ using System.Collections;
 public class CameraFollow : MonoBehaviour
 {
 
-    public Transform target;
-    //public BoxCollider2D boundBox;
-    //private Vector3 minBounds;
-    //private Vector3 maxBounds;
-    // Use this for initialization
+    /*public Transform target;
+    private GameObject enemy;
+    private GameObject player;
+    
     void Start()
     {
-        //minBounds = boundBox.bounds.min;
-        //maxBounds = boundBox.bounds.max;
+        if (GameObject.FindGameObjectWithTag("Player2") && GameObject.FindGameObjectWithTag("Player")) {
+            enemy = GameObject.FindGameObjectWithTag("Player2");
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(target.position.x, target.position.y, -35f );
-    }
+        if (GameObject.FindGameObjectWithTag("Player2") && GameObject.FindGameObjectWithTag("Player"))
+        {
+            transform.position = new Vector3(target.position.x, target.position.y, -35f);
+        }
+        
+    }*/
 }
