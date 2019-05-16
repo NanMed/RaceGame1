@@ -370,10 +370,9 @@ MonoBehaviour:
   coins: 0
   resetDelay: 1
   lapText: {fileID: 0}
-  livesText: {fileID: 0}
   coinText: {fileID: 0}
-  gameover: {fileID: 0}
   win: {fileID: 0}
+  NextLevel: {fileID: 0}
   lose: {fileID: 0}
 --- !u!212 &3350277470841790877
 SpriteRenderer:
@@ -454,7 +453,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

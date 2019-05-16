@@ -418,11 +418,10 @@ MonoBehaviour:
   coins: 0
   resetDelay: 1
   lapText: {fileID: 0}
-  livesText: {fileID: 0}
   coinText: {fileID: 0}
-  gameover: {fileID: 0}
   win: {fileID: 0}
   lose: {fileID: 0}
+  nextLevel: {fileID: 0}
 --- !u!50 &499087268088616159
 Rigidbody2D:
   serializedVersion: 4
@@ -454,7 +453,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.07836938, y: -0.076841354}
