@@ -14,7 +14,6 @@ public class CarControllerPlayer2 : MonoBehaviour
     public float resetDelay = 1f;
 
     int lap;
-    int lives;
 
     public Text lapText;
     public Text coinText;
@@ -31,14 +30,12 @@ public class CarControllerPlayer2 : MonoBehaviour
     void Start()
     {
         lap = -1;
-        lives = 3;
         lineSound = GetComponent<AudioSource>();
 
 
     }
     void Update()
     {
-        //Debug.Log(speedForce);
         second = Car2dController.first;
     }
 
@@ -107,8 +104,6 @@ public class CarControllerPlayer2 : MonoBehaviour
         }
         if (other.gameObject.tag == "Tanque")
         {
-            //speedForce = Mathf.Floor(Time.time * 2) + 30;
-            //speedForce = 40f;
             Destroy(other.gameObject);
             RunForTime(2f, () => speedForce += 7 * Time.deltaTime);
             Debug.Log("collide Tanque");
@@ -138,13 +133,9 @@ public class CarControllerPlayer2 : MonoBehaviour
         if (lap == 3)
         {
             first = true;
-            //win.SetActive(true);
-            //Time.timeScale = .25f;
-            //Invoke("Reset", resetDelay);
-            //Destroy(gameObject);
         }
 
-        if (first && second == false)
+        if (first && !second)
         {
             win.SetActive(true);
             nextLevel.gameObject.SetActive(true);
@@ -152,7 +143,7 @@ public class CarControllerPlayer2 : MonoBehaviour
             Time.timeScale = .25f;
             Invoke("Reset", resetDelay);
         }
-        else if (!first && second == true)
+        else if (!first && second)
         {
             lose.SetActive(true);
             Time.timeScale = .25f;

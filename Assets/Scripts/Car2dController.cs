@@ -14,7 +14,6 @@ public class Car2dController : MonoBehaviour
     public float resetDelay = 1f;
 
     int lap;
-    int lives;
 
     public Text lapText;
     public Text coinText;
@@ -26,21 +25,10 @@ public class Car2dController : MonoBehaviour
     public static bool first = false;
     private bool sec;
 
-    private void Awake()
-    {
-        //lapText = GetComponent<Text>();
-        //livesText = GetComponent<Text>();
-        //coinText = GetComponent<Text>();
-        //win = GetComponent<GameObject>();
-        //nextLevel = GetComponent<GameObject>();
-        //exit = GetComponent<GameObject>();
-        //lose = GetComponent<GameObject>();
-    }
     // Use this for initialization
     void Start()
     {
         lap = -1;
-        lives = 3;
         lineSound = GetComponent<AudioSource>();
 
     }
@@ -116,8 +104,6 @@ public class Car2dController : MonoBehaviour
         
         if (other.gameObject.tag == "Tanque")
         {
-            //speedForce = Mathf.Floor(Time.time * 2) + 30;
-            //speedForce = 40f;
             Destroy(other.gameObject);
             RunForTime(2f, () => speedForce += 7 * Time.deltaTime);
             Debug.Log("collide tanque");
@@ -167,13 +153,6 @@ public class Car2dController : MonoBehaviour
             Time.timeScale = .25f;
             Invoke("Reset", resetDelay);
         }
-        /*if (lives < 1)
-        {
-            gameover.SetActive(true);
-            Time.timeScale = .25f;
-            Invoke("Reset", resetDelay);
-            //Destroy(gameObject);
-        }*/
     }
 
     //https://answers.unity.com/questions/1222208/add-x-amount-in-x-seconds.html
