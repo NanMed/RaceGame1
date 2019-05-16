@@ -13,13 +13,8 @@ public class Car2dController : MonoBehaviour
 
     public float resetDelay = 1f;
 
-    int lap;
+    public static int lap;
 
-    public Text lapText;
-    public Text coinText;
-    public GameObject win;
-    public Button NextLevel;
-    public GameObject lose;
     private AudioSource lineSound;
     public static bool first = false;
     private bool sec;
@@ -27,6 +22,7 @@ public class Car2dController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        ManageTextP1.instance.win.SetActive(false);
         lap = -1;
         lineSound = GetComponent<AudioSource>();
 
@@ -142,14 +138,14 @@ public class Car2dController : MonoBehaviour
         {
             ManageTextP1.instance.win.SetActive(true);
             ManageTextP1.instance.NextLevel.gameObject.SetActive(true);
-            Time.timeScale = .25f;
-            Invoke("Reset", resetDelay);
+            //Time.timeScale = .25f;
+            //Invoke("Reset", resetDelay);
         }
         else if (!first && sec)
         {
             ManageTextP1.instance.lose.SetActive(true);
-            Time.timeScale = .25f;
-            Invoke("Reset", resetDelay);
+            //Time.timeScale = .25f;
+            //Invoke("Reset", resetDelay);
         }
     }
 

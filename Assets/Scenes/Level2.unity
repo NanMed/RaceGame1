@@ -1182,7 +1182,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 447432688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81ea2416eff898d4b8784d5a96ee54c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f50cd6411a82d34997f8fcdab7cb0b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &447432690
@@ -1521,7 +1521,7 @@ MonoBehaviour:
   coinText: {fileID: 432261830}
   win: {fileID: 220835345}
   lose: {fileID: 859155477}
-  NextLevel: {fileID: 0}
+  NextLevel: {fileID: 1049214366}
 --- !u!4 &693172514
 Transform:
   m_ObjectHideFlags: 0
@@ -2996,7 +2996,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 447432689}
+      - m_Target: {fileID: 0}
         m_MethodName: toLevel3
         m_Mode: 1
         m_Arguments:
@@ -3064,7 +3064,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 447432689}
-          m_MethodName: toLevel3
+          m_MethodName: LoadScene3
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

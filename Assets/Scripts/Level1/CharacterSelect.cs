@@ -8,12 +8,22 @@ public class CharacterSelect : MonoBehaviour
     public void ChooseCharacter(int index)
     {
         PlayerPrefs.SetInt("selectedCharacter", index);
-        print("The index is " + index);
+        Debug.Log("The index is " + index);
     }
 
-    public void LoadScene()
+    public void LoadScene1()
     {
         SceneManager.LoadScene("Level1");
+    }
+
+    public void LoadScene2()
+    {
+        SceneManager.LoadScene("Level2");
+    }
+
+    public void LoadScene3()
+    {
+        SceneManager.LoadScene("Level3");
     }
 
 }

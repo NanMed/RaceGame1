@@ -426,7 +426,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &862120616
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 862120618}
   - component: {fileID: 862120617}
   m_Layer: 0
-  m_Name: Script
+  m_Name: CharacterSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1312,7 +1312,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1594325157
@@ -1477,7 +1477,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 862120617}
-        m_MethodName: LoadScene
+        m_MethodName: LoadScene1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -32,8 +32,6 @@ public class CarControllerPlayer2 : MonoBehaviour
         nextLevel.gameObject.SetActive(false);
         lap = -1;
         lineSound = GetComponent<AudioSource>();
-
-
     }
     void Update()
     {
@@ -138,15 +136,10 @@ public class CarControllerPlayer2 : MonoBehaviour
         {
             win.SetActive(true);
             nextLevel.gameObject.SetActive(true);
-        
-            Time.timeScale = .25f;
-            //Invoke("Reset", resetDelay);
         }
         else if (!first && second)
         {
             lose.SetActive(true);
-            Time.timeScale = .25f;
-            //Invoke("Reset", resetDelay);
         }
     }
 
