@@ -5,10 +5,6 @@ using UnityEngine;
 public class CameraFollowPlayer1 : MonoBehaviour
 {
     private GameObject player;
-    public float xMin;
-    public float xMax;
-    public float yMax;
-    public float yMin;
 
     // Start is called before the first frame update
     void Start()

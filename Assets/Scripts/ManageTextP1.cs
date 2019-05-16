@@ -15,6 +15,5 @@ public class ManageTextP1 : MonoBehaviour
     public Text coinText;
     public GameObject win;
     public GameObject lose;
-    public Button nextRace;
-    public Button exit;
+    public GameObject NextLevel;
 }
