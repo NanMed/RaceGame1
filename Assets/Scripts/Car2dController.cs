@@ -17,9 +17,7 @@ public class Car2dController : MonoBehaviour
     int lives;
 
     public Text lapText;
-    public Text livesText;
     public Text coinText;
-    public GameObject gameover;
     public GameObject win;
     public GameObject nextLevel;
     public GameObject exit;
@@ -30,13 +28,13 @@ public class Car2dController : MonoBehaviour
 
     private void Awake()
     {
-        lapText = GetComponent<Text>();
-        livesText = GetComponent<Text>();
-        coinText = GetComponent<Text>();
-        win = GetComponent<GameObject>();
-        nextLevel = GetComponent<GameObject>();
-        exit = GetComponent<GameObject>();
-        lose = GetComponent<GameObject>();
+        //lapText = GetComponent<Text>();
+        //livesText = GetComponent<Text>();
+        //coinText = GetComponent<Text>();
+        //win = GetComponent<GameObject>();
+        //nextLevel = GetComponent<GameObject>();
+        //exit = GetComponent<GameObject>();
+        //lose = GetComponent<GameObject>();
     }
     // Use this for initialization
     void Start()
@@ -112,7 +110,7 @@ public class Car2dController : MonoBehaviour
         if (other.gameObject.tag == "FinishLine")
         {
             lap += 1;
-            lapText.text = "Laps: " + lap;
+            ManageTextP1.instance.lapText.text = "Laps: " + lap;
             lineSound.Play();
         }
         
@@ -129,7 +127,7 @@ public class Car2dController : MonoBehaviour
         {
             Destroy(other.gameObject);
             coins += 1;
-            coinText.text = "Coins: " + coins;
+            ManageTextP1.instance.coinText.text = "Coins: " + coins;
             Debug.Log("collide moneda");
         }
 
@@ -157,25 +155,25 @@ public class Car2dController : MonoBehaviour
 
         if (first && !sec)
         {
-            win.SetActive(true);
-            nextLevel.SetActive(true);
-            exit.SetActive(true);
+            ManageTextP1.instance.win.SetActive(true);
+            ManageTextP1.instance.nextLevel.interactable = true;
+            ManageTextP1.instance.exit.interactable = true;
             Time.timeScale = .25f;
             Invoke("Reset", resetDelay);
         }
         else if (!first && sec)
         {
-            lose.SetActive(true);
+            ManageTextP1.instance.lose.SetActive(true);
             Time.timeScale = .25f;
             Invoke("Reset", resetDelay);
         }
-        if (lives < 1)
+        /*if (lives < 1)
         {
             gameover.SetActive(true);
             Time.timeScale = .25f;
             Invoke("Reset", resetDelay);
             //Destroy(gameObject);
-        }
+        }*/
     }
 
     //https://answers.unity.com/questions/1222208/add-x-amount-in-x-seconds.html

@@ -17,9 +17,7 @@ public class CarControllerPlayer2 : MonoBehaviour
     int lives;
 
     public Text lapText;
-    public Text livesText;
     public Text coinText;
-    public GameObject gameover;
     public GameObject win;
     public GameObject lose;
     public Button nextLevel;
@@ -107,11 +105,6 @@ public class CarControllerPlayer2 : MonoBehaviour
             lapText.text = "Laps: " + lap;
             lineSound.Play();
         }
-        if (other.gameObject.tag == "Water")
-        {
-            lives -= 1;
-            livesText.text = "Lives: " + lives;
-        }
         if (other.gameObject.tag == "Tanque")
         {
             //speedForce = Mathf.Floor(Time.time * 2) + 30;
@@ -164,13 +157,6 @@ public class CarControllerPlayer2 : MonoBehaviour
             lose.SetActive(true);
             Time.timeScale = .25f;
             Invoke("Reset", resetDelay);
-        }
-        if (lives < 1)
-        {
-            gameover.SetActive(true);
-            Time.timeScale = .25f;
-            Invoke("Reset", resetDelay);
-            //Destroy(gameObject);
         }
     }
 
