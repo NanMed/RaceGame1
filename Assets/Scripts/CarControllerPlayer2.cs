@@ -20,7 +20,7 @@ public class CarControllerPlayer2 : MonoBehaviour
     public GameObject win;
     public GameObject lose;
     public Button nextLevel;
-    public Button exit;
+   
     private AudioSource lineSound;
     public static bool first = false;
     private bool second;
@@ -139,7 +139,7 @@ public class CarControllerPlayer2 : MonoBehaviour
         {
             win.SetActive(true);
             nextLevel.gameObject.SetActive(true);
-            exit.gameObject.SetActive(true);
+        
             Time.timeScale = .25f;
             Invoke("Reset", resetDelay);
         }

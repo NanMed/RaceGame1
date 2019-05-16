@@ -18,7 +18,7 @@ public class Car2dController : MonoBehaviour
     public Text lapText;
     public Text coinText;
     public GameObject win;
-    public GameObject nextLevel;
+    public GameObject nextRace;
     public GameObject exit;
     public GameObject lose;
     private AudioSource lineSound;
@@ -142,7 +142,7 @@ public class Car2dController : MonoBehaviour
         if (first && !sec)
         {
             ManageTextP1.instance.win.SetActive(true);
-            ManageTextP1.instance.nextLevel.interactable = true;
+            ManageTextP1.instance.nextRace.interactable = true;
             ManageTextP1.instance.exit.interactable = true;
             Time.timeScale = .25f;
             Invoke("Reset", resetDelay);

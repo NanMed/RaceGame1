@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("Start");
-        Debug.Log("Start");
+        Debug.Log("Click");
     }
 
     public void toLevel2()
