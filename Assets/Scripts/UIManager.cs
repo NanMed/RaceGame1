@@ -28,4 +28,15 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("Level3");
         Debug.Log("Level3");
     }
+
+    public void Next()
+    {
+        SceneManager.LoadScene("Items");
+        Debug.Log("Items");
+    }
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Level1");
+        Debug.Log("Level1");
+    }
 }
