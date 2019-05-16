@@ -23,20 +23,36 @@ public class Car2dController : MonoBehaviour
     private AudioSource lineSound;
     public static bool first = false;
     private bool sec;
+    private Reload ReloadSO;
 
     // Use this for initialization
     void Start()
     {
         lap = -1;
+        //Debug.Log(lap);
         lineSound = GetComponent<AudioSource>();
+
+        ReloadSO = Resources.Load<Reload>("Restart");
+
+        Debug.Log("Reload", ReloadSO);
+
 
     }
     void Update()
     {
         //Debug.Log(speedForce);
         sec = CarControllerPlayer2.first;
+
+        if (ReloadSO.Restarted)
+        {
+            Start();
+        }
     }
 
+    private void OnLevelWasLoaded(int level)
+    {
+        Debug.Log(lap);
+    }
 
 
     // Update is called once per frame

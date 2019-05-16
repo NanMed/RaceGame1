@@ -1953,7 +1953,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 773404680}
+      - m_Target: {fileID: 1461454951}
         m_MethodName: toLevel2
         m_Mode: 1
         m_Arguments:
@@ -2020,8 +2020,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1461454951}
-          m_MethodName: toLevel2
+        - m_Target: {fileID: 11500000, guid: 6cfd6b50792dd4f15bd3fa0b0b14bb49, type: 3}
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2168,6 +2168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ea2416eff898d4b8784d5a96ee54c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myScriptableObject: {fileID: 11400000, guid: eae5cc9d9b8e0e143acafe9d8306a982, type: 2}
 --- !u!4 &773404681
 Transform:
   m_ObjectHideFlags: 0
@@ -4347,6 +4348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ea2416eff898d4b8784d5a96ee54c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myScriptableObject: {fileID: 0}
 --- !u!4 &1461454952
 Transform:
   m_ObjectHideFlags: 0
@@ -4626,6 +4628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ea2416eff898d4b8784d5a96ee54c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myScriptableObject: {fileID: 0}
 --- !u!1 &1587347817
 GameObject:
   m_ObjectHideFlags: 0

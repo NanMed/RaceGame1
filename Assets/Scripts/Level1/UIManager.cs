@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-	public void Play(){
+
+    public Reload myScriptableObject;
+
+
+    public void Play(){
         SceneManager.LoadScene("SelectPlayer");
         Debug.Log("Click");
 	}
@@ -21,6 +25,7 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("Level2");
         Debug.Log("Level2");
+        myScriptableObject.Restarted = true;
     }
 
     public void toLevel3()
