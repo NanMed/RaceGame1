@@ -3437,7 +3437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -474, y: -427}
+  m_AnchoredPosition: {x: -396, y: -169}
   m_SizeDelta: {x: 86.79999, y: 34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1049214368
@@ -3482,7 +3482,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1049214369}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 447432689}
+        m_MethodName: toLevel3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1049214369
@@ -3498,7 +3509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.22929844, g: 0.6509434, b: 0.11360805, a: 1}
+  m_Color: {r: 0.9245283, g: 0.91863936, b: 0.11774653, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5143,7 +5154,7 @@ MonoBehaviour:
   coinText: {fileID: 0}
   win: {fileID: 1274434356}
   lose: {fileID: 1590170426}
-  nextLevel: {fileID: 0}
+  nextLevel: {fileID: 1049214368}
 --- !u!212 &1785522084
 SpriteRenderer:
   m_ObjectHideFlags: 0
