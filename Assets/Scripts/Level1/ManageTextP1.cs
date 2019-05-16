@@ -9,6 +9,8 @@ public class ManageTextP1 : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        win.SetActive(false);
+        NextLevel.gameObject.SetActive(false);
     }
 
     public Text lapText;

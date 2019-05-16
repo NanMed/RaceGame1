@@ -25,6 +25,7 @@ public class Car2dController : MonoBehaviour
         ManageTextP1.instance.win.SetActive(false);
         lap = -1;
         lineSound = GetComponent<AudioSource>();
+        first = false;
 
     }
     void Update()
@@ -140,8 +141,12 @@ public class Car2dController : MonoBehaviour
             ManageTextP1.instance.NextLevel.gameObject.SetActive(true);
             //Time.timeScale = .25f;
             //Invoke("Reset", resetDelay);
+        } else
+        {
+            ManageTextP1.instance.win.SetActive(false);
+            ManageTextP1.instance.NextLevel.gameObject.SetActive(false);
         }
-        else if (!first && sec)
+        if (!first && sec)
         {
             ManageTextP1.instance.lose.SetActive(true);
             //Time.timeScale = .25f;

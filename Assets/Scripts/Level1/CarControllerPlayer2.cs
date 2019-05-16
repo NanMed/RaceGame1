@@ -26,6 +26,12 @@ public class CarControllerPlayer2 : MonoBehaviour
     private bool second;
 
     // Use this for initialization
+    private void Awake()
+    {
+        win.SetActive(false);
+        nextLevel.gameObject.SetActive(false);
+        first = false;
+    }
     void Start()
     {
         win.SetActive(false);
@@ -136,8 +142,12 @@ public class CarControllerPlayer2 : MonoBehaviour
         {
             win.SetActive(true);
             nextLevel.gameObject.SetActive(true);
+        } else
+        {
+            win.SetActive(false);
+            nextLevel.gameObject.SetActive(false);
         }
-        else if (!first && second)
+        if (!first && second)
         {
             lose.SetActive(true);
         }
