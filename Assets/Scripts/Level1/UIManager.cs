@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
 	public void Play(){
-        SceneManager.LoadScene("SelectPlayer");
-        Debug.Log("Click");
+        SceneManager.LoadScene("Instructions");
+        Debug.Log("Instructions");
 	}
 
     public void Restart()
@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene("Level1");
-        Debug.Log("Level1");
+        SceneManager.LoadScene("SelectPlayer");
+        Debug.Log("SelectPlayer");
     }
 }
