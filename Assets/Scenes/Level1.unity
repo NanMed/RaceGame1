@@ -3475,7 +3475,6 @@ MonoBehaviour:
   win: {fileID: 1720293200}
   lose: {fileID: 813289296}
   nextLevel: {fileID: 693513703}
-  nextRace: {fileID: 0}
 --- !u!4 &1081350865
 Transform:
   m_ObjectHideFlags: 0
@@ -4967,7 +4966,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Siguiente carrera...
+  m_Text: Next race..
 --- !u!222 &1595791898
 CanvasRenderer:
   m_ObjectHideFlags: 0
