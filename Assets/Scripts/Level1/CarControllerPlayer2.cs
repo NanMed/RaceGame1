@@ -25,10 +25,11 @@ public class CarControllerPlayer2 : MonoBehaviour
     public static bool first = false;
     private bool second;
 
-
     // Use this for initialization
     void Start()
     {
+        win.SetActive(false);
+        nextLevel.gameObject.SetActive(false);
         lap = -1;
         lineSound = GetComponent<AudioSource>();
 
@@ -38,8 +39,6 @@ public class CarControllerPlayer2 : MonoBehaviour
     {
         second = Car2dController.first;
     }
-
-
 
     // Update is called once per frame
     void FixedUpdate()
@@ -141,13 +140,13 @@ public class CarControllerPlayer2 : MonoBehaviour
             nextLevel.gameObject.SetActive(true);
         
             Time.timeScale = .25f;
-            Invoke("Reset", resetDelay);
+            //Invoke("Reset", resetDelay);
         }
         else if (!first && second)
         {
             lose.SetActive(true);
             Time.timeScale = .25f;
-            Invoke("Reset", resetDelay);
+            //Invoke("Reset", resetDelay);
         }
     }
 
