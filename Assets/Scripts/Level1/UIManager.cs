@@ -9,7 +9,13 @@ public class UIManager : MonoBehaviour
 	public void Play(){
         SceneManager.LoadScene("Instructions");
         Debug.Log("Instructions");
-	}
+        PlayerPrefs.SetInt("counter1", 0);
+        PlayerPrefs.SetInt("counter2", 0);
+        PlayerPrefs.SetInt("coins1", 0);
+        PlayerPrefs.SetInt("coins2", 0);
+
+
+    }
 
     public void Restart()
     {
