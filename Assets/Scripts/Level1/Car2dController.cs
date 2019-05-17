@@ -96,6 +96,7 @@ public class Car2dController : MonoBehaviour
         {
             lap += 1;
             ManageTextP1.instance.lapText.text = "Laps: " + lap;
+            ManageTextP1.instance.lineSound.Play();
             lineSound.Play();
         }
         

@@ -11,6 +11,7 @@ public class ManageTextP1 : MonoBehaviour
         instance = this;
         win.SetActive(false);
         NextLevel.gameObject.SetActive(false);
+        lineSound = GetComponent<AudioSource>();
     }
 
     public Text lapText;
@@ -18,4 +19,5 @@ public class ManageTextP1 : MonoBehaviour
     public GameObject win;
     public GameObject lose;
     public GameObject NextLevel;
+    public AudioSource lineSound;
 }
