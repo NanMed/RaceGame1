@@ -153,7 +153,7 @@ public class Car2dController : MonoBehaviour
         }
         if (!first && sec)
         {
-            ManageTextP1.instance.lose.SetActive(true);
+            //ManageTextP1.instance.lose.SetActive(true);
             //Time.timeScale = .25f;
             //Invoke("Reset", resetDelay);
         }

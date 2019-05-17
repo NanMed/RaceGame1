@@ -122,7 +122,6 @@ public class CarControllerPlayer2 : MonoBehaviour
             //int currentScore = PlayerPrefs.GetInt("coins2");
             //int newScore = currentScore + coins;
             //PlayerPrefs.SetInt("coins2", newScore);
-            Debug.Log("collide moneda");
         }
 
         CheckGameOver();
@@ -156,7 +155,7 @@ public class CarControllerPlayer2 : MonoBehaviour
         }
         if (!first && second)
         {
-            lose.SetActive(true);
+            //lose.SetActive(true);
         }
     }
 
