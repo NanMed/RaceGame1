@@ -21,10 +21,7 @@ public class CharacterSelect : MonoBehaviour
         SceneManager.LoadScene("Level2");
     }
 
-    public void LoadTryScene2()
-    {
-        SceneManager.LoadScene("PruebaLevel2");
-    }
+  
 
     public void LoadScene3()
     {
