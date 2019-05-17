@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class txtControl : MonoBehaviour
 {
-
     public Text player;
     public Text coins;
 
