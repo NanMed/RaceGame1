@@ -12,8 +12,10 @@ public class WinnerManager : MonoBehaviour
 
     public void selectMedal()
     {
+        //Debug.Log(PlayerPrefs.GetInt("counter1") + "counter1");
         if (PlayerPrefs.GetInt("counter1") > 1)
         {
+            //Set active the text
             if (PlayerPrefs.GetInt("coins1") <= 5)
             {
                 ChooseWinner(2);
@@ -30,6 +32,7 @@ public class WinnerManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("counter2")>1)
         {
+            //Set active the text
             if (PlayerPrefs.GetInt("coins2") <= 5)
             {
                 ChooseWinner(2);
