@@ -23,6 +23,12 @@ public class UIManager : MonoBehaviour
         Debug.Log("Click");
     }
 
+    public void Restart2()
+    {
+        SceneManager.LoadScene("Start");
+        Debug.Log("Start");
+    }
+
     public void toLevel2()
     {
         SceneManager.LoadScene("Level2");
