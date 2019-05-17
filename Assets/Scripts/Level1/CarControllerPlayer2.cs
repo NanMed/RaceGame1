@@ -119,6 +119,9 @@ public class CarControllerPlayer2 : MonoBehaviour
             coins += 1;
             coinText.text = "Coins: " + coins;
             PlayerPrefs.SetInt("coins2", coins);
+            //int currentScore = PlayerPrefs.GetInt("coins2");
+            //int newScore = currentScore + coins;
+            //PlayerPrefs.SetInt("coins2", newScore);
             Debug.Log("collide moneda");
         }
 
