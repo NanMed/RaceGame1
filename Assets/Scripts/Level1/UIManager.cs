@@ -39,4 +39,10 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("SelectPlayer");
         Debug.Log("SelectPlayer");
     }
+
+    public void Winner()
+    {
+        SceneManager.LoadScene("Winner");
+        Debug.Log("Winner");
+    }
 }

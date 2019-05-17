@@ -9,7 +9,7 @@ public class Car2dController : MonoBehaviour
     float driftFactorSticky = 0.9f;
     float driftFactorSlippy = 1;
     float maxStickyVelocity = 2.5f;
-    public int coins = 0;
+    public static int coins = 0;
 
     public float resetDelay = 1f;
 

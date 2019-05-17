@@ -465,7 +465,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f446fdcfc352447af4e0625ed57664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 0
   resetDelay: 1
   lapText: {fileID: 1938942331}
   coinText: {fileID: 0}
@@ -1103,8 +1102,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: toLevel3
+        - m_Target: {fileID: 2022757958}
+          m_MethodName: Winner
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1159,8 +1158,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: toLevel3
+      - m_Target: {fileID: 818554085}
+        m_MethodName: Winner
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1715,7 +1714,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941149571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2861,7 +2860,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0.59607846, b: 0, a: 1}
+  m_BackGroundColor: {r: 0.5294118, g: 0.44705886, b: 0.20784315, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3622,7 +3621,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next level
+  m_Text: Finish race
 --- !u!222 &1841427636
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4041,7 +4040,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0.59607846, b: 0, a: 1}
+  m_BackGroundColor: {r: 0.50980395, g: 0.43137258, b: 0.18823531, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
