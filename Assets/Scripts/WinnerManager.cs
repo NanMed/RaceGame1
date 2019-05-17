@@ -12,28 +12,37 @@ public class WinnerManager : MonoBehaviour
 
     public void selectMedal()
     {
-        if (Car2dController.coins <= 5)
+        if (PlayerPrefs.GetInt("counter1") > 1)
         {
-            ChooseWinner(2);
-        } else if (Car2dController.coins > 5 && Car2dController.coins < 10)
-        {
-            ChooseWinner(1);
-        } else if (Car2dController.coins >= 10)
-        {
-            ChooseWinner(0);
+            if (PlayerPrefs.GetInt("coins1") <= 5)
+            {
+                ChooseWinner(2);
+            }
+            else if (PlayerPrefs.GetInt("coins1") > 5 && PlayerPrefs.GetInt("coins1") < 10)
+            {
+                ChooseWinner(1);
+            }
+            else if (PlayerPrefs.GetInt("coins1") >= 10)
+            {
+                ChooseWinner(0);
+            }
         }
 
-        if (CarControllerPlayer2.coins <= 5)
+        if (PlayerPrefs.GetInt("counter2")>1)
         {
-            ChooseWinner(2);
+            if (PlayerPrefs.GetInt("coins2") <= 5)
+            {
+                ChooseWinner(2);
+            }
+            else if (PlayerPrefs.GetInt("coins2") > 5 && PlayerPrefs.GetInt("coins2") < 10)
+            {
+                ChooseWinner(1);
+            }
+            else if (PlayerPrefs.GetInt("coins2") >= 10)
+            {
+                ChooseWinner(0);
+            }
         }
-        else if (CarControllerPlayer2.coins > 5 && CarControllerPlayer2.coins < 10)
-        {
-            ChooseWinner(1);
-        }
-        else if (CarControllerPlayer2.coins >= 10)
-        {
-            ChooseWinner(0);
-        }
+        
     }
 }

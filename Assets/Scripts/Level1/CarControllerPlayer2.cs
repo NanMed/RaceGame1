@@ -10,6 +10,7 @@ public class CarControllerPlayer2 : MonoBehaviour
     float driftFactorSlippy = 1;
     float maxStickyVelocity = 2.5f;
     public static int coins = 0;
+    public static int counter2 = 0;
 
     public float resetDelay = 1f;
 
@@ -117,6 +118,7 @@ public class CarControllerPlayer2 : MonoBehaviour
             Destroy(other.gameObject);
             coins += 1;
             coinText.text = "Coins: " + coins;
+            PlayerPrefs.SetInt("coins2", coins);
             Debug.Log("collide moneda");
         }
 
@@ -140,6 +142,8 @@ public class CarControllerPlayer2 : MonoBehaviour
 
         if (first && !second)
         {
+            counter2++;
+            PlayerPrefs.SetInt("counter2", counter2);
             win.SetActive(true);
             nextLevel.gameObject.SetActive(true);
         } else
