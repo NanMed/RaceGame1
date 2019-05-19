@@ -27,6 +27,10 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("Start");
         Debug.Log("Start");
+        PlayerPrefs.SetInt("counter1", 0);
+        PlayerPrefs.SetInt("counter2", 0);
+        PlayerPrefs.SetInt("coins1", 0);
+        PlayerPrefs.SetInt("coins2", 0);
     }
 
     public void toLevel2()
